@@ -4,6 +4,7 @@
 //Marcos Henrique Alves da Silva Sousa
 
 #include <stdio.h>
+#include "marcos.c"
 #include <stdlib.h>
 #include <locale.h>
 
