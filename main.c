@@ -5,6 +5,7 @@
 
 #include <stdio.h>
 #include "marcos.c"
+#include "joao.c"
 #include <stdlib.h>
 #include <locale.h>
 
@@ -12,6 +13,8 @@
 int main(){
     setlocale(LC_CTYPE, "");
     int escolha;
+    Tlivro livros[100];
+    Tarea Areas[10];
 
     do{
         printf("---------------- SISTEMA DE BIBLIOTECA ----------------\n"

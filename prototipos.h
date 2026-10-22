@@ -1,4 +1,4 @@
-typedef struct {
+typedef struct Livro{
     int isbn;
     char titulo[50];
     char editora[50];
@@ -7,5 +7,9 @@ typedef struct {
     int ano;
     int qtdCopias;
     int qtdEmprestada;
-}Tlivro;
+} Tlivro;
 
+typedef struct Area{
+    int codigo;
+    char nome[31];
+} Tarea;
