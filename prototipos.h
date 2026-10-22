@@ -9,8 +9,3 @@ typedef struct {
     int qtdEmprestada;
 }Tlivro;
 
-typedef struct prototipos
-{
-    int id;
-    char nome[50];
-} TAcervo;

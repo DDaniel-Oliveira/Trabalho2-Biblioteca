@@ -8,7 +8,7 @@
 #include <locale.h>
 #include "prototipos.h"
 
-void cadastrar_livro(struct Tlivro, struct TAcervo){
-     
+void cadastrar_livro(struct Tlivro){
+     if ()
 }
 
