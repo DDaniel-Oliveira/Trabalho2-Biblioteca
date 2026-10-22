@@ -6,4 +6,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#include "prototipos.h"
+
+void cadastrar_livro(struct Tlivro, struct TAcervo){
+     
+}
 
