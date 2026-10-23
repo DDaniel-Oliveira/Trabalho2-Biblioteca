@@ -4,17 +4,18 @@
 //Marcos Henrique Alves da Silva Sousa
 
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <locale.h>
 #include "prototipos.h"
 
-void realizarEmprestimo(Livro livros[], int totalLivros) {
-    char isbnBusca[20];
+void realizarEmprestimo(Tlivro livros[], int totalLivros) {
+    char isbnBusca[14];
     int encontrado = 0;
 
     printf("\n--- REALIZAR EMPRÉSTIMO ---\n");
     printf("Digite o ISBN do livro: ");
-    scanf("%s", isbnBusca);
+    scanf("%13s", isbnBusca);
 
     for (int i = 0; i < totalLivros; i++) {
         if (strcmp(livros[i].isbn, isbnBusca) == 0) {

@@ -4,21 +4,19 @@
 //Marcos Henrique Alves da Silva Sousa
 
 #include <stdio.h>
-#include "marcos.c"
-#include "joao.c"
 #include <stdlib.h>
 #include <locale.h>
-
+#include "prototipos.h"
 
 int main(){
-    setlocale(LC_CTYPE, "");
+    setlocale(LC_ALL, ".UTF-8");
     int escolha;
     Tlivro livros[100];
     Tarea Areas[10];
 
     do{
         printf("---------------- SISTEMA DE BIBLIOTECA ----------------\n"
-        "0 - SAIR DA APLICAÇÃO"
+        "0 - SAIR DA APLICAÇÃO\n"
         "1 - EXIBIR AREAS\n"
         "2 - INSERIR LIVRO\n"
         "3 - EXIBIR RELAÇÃO DE LIVRO\n"
@@ -30,9 +28,13 @@ int main(){
         "Escolha: ");
         scanf("%d", &escolha);
         
-        switch (escolha)
+        switch (escolha){
+            case 0:
+                break;
             default:
                 printf("Não implementado.\n");
+                system("pause");
+        }
         
     } while(escolha != 0);
     return 0;
