@@ -6,13 +6,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
-#include "prototipos.h"
+#include "biblioteca.h"
 
 int main(){
     setlocale(LC_ALL, ".UTF-8");
-    int escolha;
+    int escolha, t;
     Tlivro livros[100];
     Tarea Areas[10];
+
+    cadAreas(Areas);
 
     do{
         printf("---------------- SISTEMA DE BIBLIOTECA ----------------\n"
@@ -24,16 +26,28 @@ int main(){
         "5 - REALIZAR EMPRÉSTIMO\n"
         "6 - REALIZAR DEVOLUÇÃO\n"
         "7 - EXIBIR LIVROS EMPRESTADOS DE UMA DETERMINADA ÁREA\n"
-        "8 - EXIBIR LIVROS EMPRESTADOS POR ÁREA\n"
-        "Escolha: ");
-        scanf("%d", &escolha);
-        
+        "8 - EXIBIR LIVROS EMPRESTADOS POR ÁREA\n");
+        do{
+            printf("Escolha: ");
+            t = scanf("%d", &escolha);
+            if (t != 1){
+                printf("Entrada Inválida, digite um número.\n");
+                limpaBuffer();
+            }
+        }while(t != 1);
+        printf("-------------------------------------------------------\n");
         switch (escolha){
+            case 1:
+                exibirAreas(Areas);
+                system("pause");
+                system("cls");
+                break;
             case 0:
                 break;
             default:
                 printf("Não implementado.\n");
                 system("pause");
+                system("cls");
         }
         
     } while(escolha != 0);
