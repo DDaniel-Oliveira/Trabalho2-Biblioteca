@@ -12,12 +12,13 @@
 void realizarEmprestimo(Tlivro livros[], int totalLivros) {
     char isbnBusca[14];
     int encontrado = 0;
+    int i;
 
     printf("\n--- REALIZAR EMPRÉSTIMO ---\n");
     printf("Digite o ISBN do livro: ");
     scanf("%13s", isbnBusca);
 
-    for (int i = 0; i < totalLivros; i++) {
+    for (i = 0; i < totalLivros; i++) {
         if (strcmp(livros[i].isbn, isbnBusca) == 0) {
             encontrado = 1;
           
