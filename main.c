@@ -39,15 +39,13 @@ int main(){
         switch (escolha){
             case 1:
                 exibirAreas(Areas);
-                system("pause");
-                system("cls");
+                end();
                 break;
             case 0:
                 break;
             default:
                 printf("Não implementado.\n");
-                system("pause");
-                system("cls");
+                end();
         }
         
     } while(escolha != 0);

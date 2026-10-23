@@ -22,6 +22,7 @@ void realizarEmprestimo(Tlivro livros[], int totalLivros);
 //FUNÇÕES DO JOSÉ
 
 //FUNÇÕES DO DANIEL
+void end(void);
 void cadAreas(Tarea a[]);
 void limpaBuffer(void);
 void exibirAreas(Tarea a[]);

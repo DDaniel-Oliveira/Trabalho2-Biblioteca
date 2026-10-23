@@ -2,6 +2,11 @@
 #include <stdlib.h>
 #include "biblioteca.h"
 
+void end(void){
+    system("pause");
+    system("cls");
+}
+
 void limpaBuffer(void){
     int c;
     while ((c = getchar()) != '\n' && c != EOF) {
