@@ -8,10 +8,13 @@
 #include <locale.h>
 #include "biblioteca.h"
 
+
+
 int main(){
     setlocale(LC_ALL, ".UTF-8");
     int escolha, t;
     Tlivro livros[100];
+    int totalLivros = 0;
     Tarea Areas[10];
 
     cadAreas(Areas);
@@ -39,6 +42,12 @@ int main(){
         switch (escolha){
             case 1:
                 exibirAreas(Areas);
+                end();
+                break;
+            case 2:
+                system("cls");
+                limpaBuffer();
+                cadastrar_livro(livros, &totalLivros);
                 end();
                 break;
             case 0:

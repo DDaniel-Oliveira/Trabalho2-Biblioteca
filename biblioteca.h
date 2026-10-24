@@ -26,3 +26,5 @@ void end(void);
 void cadAreas(Tarea a[]);
 void limpaBuffer(void);
 void exibirAreas(Tarea a[]);
+void cadastrar_livro( Tlivro l[] ,  int*totalLivros);
+int ler_isbn(char isbn[14]);
