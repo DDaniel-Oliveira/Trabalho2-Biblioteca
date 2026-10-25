@@ -47,7 +47,7 @@ int main(){
             case 2:
                 system("cls");
                 limpaBuffer();
-                cadastrar_livro(livros, &totalLivros);
+                cadastrar_livro(livros, &totalLivros, Areas, 10);
                 end();
                 break;
             case 0:

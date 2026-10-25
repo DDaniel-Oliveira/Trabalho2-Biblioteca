@@ -9,9 +9,11 @@
 #include <locale.h>
 #include <ctype.h>
 #include "biblioteca.h"
+#include <time.h>
 
 
-void cadastrar_livro(Tlivro livros[], int *totalLivros) {
+
+void cadastrar_livro(Tlivro livros[], int *totalLivros, Tarea Areas[], int totalAreas){
     Tlivro novo;
     int i;
 
@@ -47,16 +49,32 @@ void cadastrar_livro(Tlivro livros[], int *totalLivros) {
     printf("Autor: ");
     scanf(" %49[^\n]", novo.autor);
 
-    printf("Area: ");
-    scanf(" %29[^\n]", novo.area);
+    if (!escolher_area(Areas, totalAreas, novo.area)) {
+    printf("Cadastro cancelado: area nao selecionada.\n");
+    return;
+}
+    /* Coloca o ano atual numa variável ano_atual */
+time_t agora = time(NULL);
+struct tm *data_atual = localtime(&agora);
+int ano_atual = data_atual->tm_year + 1900;
 
+do {
     printf("Ano de publicacao: ");
+
     if (scanf("%d", &novo.ano) != 1) {
-        printf("Erro: ano invalido.\n");
+        printf("Erro: digite um ano numerico.\n");
         limpaBuffer();
-        return;
+        novo.ano = 0;
+        continue;
+    }
+    if (novo.ano <= 0 || novo.ano > ano_atual) {
+        printf("Erro: ano invalido.\n");
     }
 
+} while (novo.ano <= 0 || novo.ano > ano_atual);
+
+    
+    
     printf("Quantidade de copias: ");
     if (scanf("%d", &novo.qtdCopias) != 1 ||
         novo.qtdCopias < 1) {
@@ -119,4 +137,30 @@ int ler_isbn(char isbn[14]) {
         strcpy(isbn, entrada);
         return 1;
     }
+}
+
+/*Funcão para incluir o livro na area correta durante o cadastro(Chamada na funcao adastrar_livro())*/
+int escolher_area(Tarea Areas[], int totalAreas, char areaEscolhi[]){
+    int i; 
+    int opcao;  
+    printf("\n---- AREAS DISPONIVEIS ------\n");
+
+    for(i = 0; i < totalAreas;  i++ ){
+        printf("%d - %s\n", i+1, Areas[i].nome);
+    }
+    printf("Escolha o numero da area: ");
+    /*verifica se a opcao e valida*/
+    if(scanf("%d", &opcao) != 1){
+        printf("Opção Invalia");
+        limpaBuffer();
+        return 0;
+    }
+    if(opcao < 1 || opcao > totalAreas){
+        printf("Opção Invalia");
+        limpaBuffer();
+        return 0;
+    }
+
+    strcpy(areaEscolhi, Areas[opcao - 1].nome);
+    return 1;
 }
