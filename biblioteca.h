@@ -18,6 +18,9 @@ typedef struct Area{
 void realizarEmprestimo(Tlivro livros[], int totalLivros);
 
 //FUNÇÕES DO MARCOS
+int ler_isbn(char isbn[14]);
+int escolher_area(Tarea Areas[], int totalAreas, char areaEscolhida[]);
+void cadastrar_livro(Tlivro livros[], int *totalLivros, Tarea Areas[], int totalAreas); 
 
 //FUNÇÕES DO JOSÉ
 
@@ -25,7 +28,4 @@ void realizarEmprestimo(Tlivro livros[], int totalLivros);
 void end(void);
 void cadAreas(Tarea a[]);
 void limpaBuffer(void);
-void exibirAreas(Tarea a[]);
-int ler_isbn(char isbn[14]);
-int escolher_area(Tarea Areas[], int totalAreas, char areaEscolhida[]);
-void cadastrar_livro(Tlivro livros[], int *totalLivros, Tarea Areas[], int totalAreas);   
+void exibirAreas(Tarea a[]);  
