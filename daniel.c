@@ -26,6 +26,6 @@ void cadAreas(Tarea a[]){
 void exibirAreas(Tarea a[]){
     int i;
     for (i=0;i<10;i++){
-        printf("Area: %s\t| Código: %d\n", a[i].nome, a[i].codigo);
+        printf("Área: %s\t| Código: %d\n", a[i].nome, a[i].codigo);
     }
 }
