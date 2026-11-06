@@ -1,1 +1,2 @@
-
+Tlivro livros[]
+int *totalLivros
