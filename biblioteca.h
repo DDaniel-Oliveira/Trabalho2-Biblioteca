@@ -16,6 +16,7 @@ typedef struct Area{
 
 //FUNÇÕES DO JOÃO
 void realizarEmprestimo(Tlivro livros[], int totalLivros);
+void realizarDevolucao(Tlivro livros[], int totalLivros);
 
 //FUNÇÕES DO MARCOS
 int ler_isbn(char isbn[14]);
