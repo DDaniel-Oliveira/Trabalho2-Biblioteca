@@ -40,3 +40,5 @@ void realizarEmprestimo(Tlivro livros[], int totalLivros) {
     }
 }
 
+void realizarDevolucao(Tlivro livros[], int totalLivros){
+}
