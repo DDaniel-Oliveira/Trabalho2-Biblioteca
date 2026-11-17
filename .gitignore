@@ -1,3 +1,4 @@
 # Executaveis compilados
 *.exe
 /.vscode
+/output

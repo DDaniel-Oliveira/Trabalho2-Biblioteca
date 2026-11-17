@@ -15,6 +15,7 @@ void limpaBuffer(void){
 
 void cadAreas(Tarea a[]){
     int i;
+    printf("Cadastre as 10 áreas da biblioteca.\n");
     for (i=0; i<10; i++){
         printf("Área %d\nNome: ", i+1);
         scanf(" %30[^\n]s", a[i].nome);
@@ -28,4 +29,13 @@ void exibirAreas(Tarea a[]){
     for (i=0;i<10;i++){
         printf("Área: %s\t| Código: %d\n", a[i].nome, a[i].codigo);
     }
+}
+
+void emprestimo(Tarea *a[], int *total){
+    if (*total == 0){
+        printf("Não existem livros cadastrados.");
+        return;
+    }
+    char emprestimo[14];
+    int temp;
 }

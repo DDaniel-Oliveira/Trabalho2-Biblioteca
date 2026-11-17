@@ -28,4 +28,5 @@ void cadastrar_livro(Tlivro livros[], int *totalLivros, Tarea Areas[], int total
 void end(void);
 void cadAreas(Tarea a[]);
 void limpaBuffer(void);
-void exibirAreas(Tarea a[]);  
+void exibirAreas(Tarea a[]);
+void emprestimo(Tarea *a[], int *total);
