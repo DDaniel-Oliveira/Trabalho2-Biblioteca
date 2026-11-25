@@ -1,6 +1,6 @@
 //Daniel de Oliveira Silva
 //João Pedro Teixeira
-//José Victor Alpino Viado
+//José Victor Alpino Moreira
 //Marcos Henrique Alves da Silva Sousa
 
 #include <stdio.h>
@@ -50,9 +50,18 @@ int main(){
                 cadastrar_livro(livros, &totalLivros, Areas, 10);
                 end();
                 break;
+            case 3:
+                listarLivros(livros, totalLivros);
+                end()
+                break;    
+            case 4:
+               limpaBuffer();
+               buscaLivrosPorPrefixos(livros, totalLivros);
+               end();
+               break;
             case 0:
                 break;
-            default:
+                default:
                 printf("Não implementado.\n");
                 end();
         }
