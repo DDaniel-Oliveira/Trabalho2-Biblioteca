@@ -1,4 +1,10 @@
-/*opressão 3*/
+//Daniel de Oliveira Silva
+//Joao Pedro Teixeira
+//Jose Victor Alpino Moreira
+//Marcos Henrique Alves da Silva Sousa
+
+
+/*operação 3*/
 
 void listarLivros(Tlivros livros[], int totalLivros) {
 	int i;
@@ -32,7 +38,7 @@ void listarLivros(Tlivros livros[], int totalLivros) {
 
 
 
-/* opressão 4*/
+/* operação 4*/
 
 void buscarLivrosPorPrefixo(Tlivro livros[], int totalLivros) {
     char prefixo[50];
