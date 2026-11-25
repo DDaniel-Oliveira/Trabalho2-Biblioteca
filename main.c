@@ -52,16 +52,26 @@ int main(){
                 break;
             case 3:
                 listarLivros(livros, totalLivros);
-                end()
+                end();
                 break;    
             case 4:
                limpaBuffer();
                buscaLivrosPorPrefixos(livros, totalLivros);
                end();
                break;
+            case 5:
+                limpaBuffer();
+               void realizarEmprestimo(Tlivro livros[], int totalLivros); 
+               end();
+               break; 
+            case 6:
+               limpaBuffer();
+               void realizarDevolucao(Tlivro livros[], int totalLivros); 
+               end()
+               break; 
             case 0:
                 break;
-                default:
+            default:
                 printf("Não implementado.\n");
                 end();
         }
