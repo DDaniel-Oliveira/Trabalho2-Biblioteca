@@ -15,6 +15,7 @@ typedef struct Area{
 } Tarea;
 
 //FUNÇÕES DO JOÃO
+int localizarLivroPorISBN(Tlivro livros[], int totalLivros, char isbn[])
 void realizarEmprestimo(Tlivro livros[], int totalLivros);
 void realizarDevolucao(Tlivro livros[], int totalLivros);
 
