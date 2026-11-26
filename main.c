@@ -56,19 +56,24 @@ int main(){
                 break;    
             case 4:
                limpaBuffer();
-               buscaLivrosPorPrefixos(livros, totalLivros);
+               buscarLivrosPorPrefixo(livros, totalLivros);
                end();
                break;
             case 5:
                 limpaBuffer();
-               void realizarEmprestimo(Tlivro livros[], int totalLivros); 
+               realizarEmprestimo(livros, totalLivros); 
                end();
                break; 
             case 6:
                limpaBuffer();
-               void realizarDevolucao(Tlivro livros[], int totalLivros); 
-               end()
-               break; 
+               realizarDevolucao(livros, totalLivros); 
+               end();
+               break;
+            case 7:
+                limpaBuffer();
+                livrosEmprestadosArea(livros, Areas, totalLivros);
+                end();
+                break;
             case 0:
                 break;
             default:

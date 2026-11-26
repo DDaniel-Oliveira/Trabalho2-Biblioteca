@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include "biblioteca.h"
 
@@ -31,11 +32,27 @@ void exibirAreas(Tarea a[]){
     }
 }
 
-void emprestimo(Tarea *a[], int *total){
-    if (*total == 0){
-        printf("Não existem livros cadastrados.");
-        return;
+void livrosEmprestadosArea(Tlivro livros[], Tarea areas[], int qtd){
+    int codArea, i, total = 0;
+
+    printf("Digite o código da área (0 a 9).\n");
+    do{
+        i = scanf("%d", &codArea);
+        if (i!=1 || codArea > 9 || codArea < 0){
+            printf("Codigo invalido. Digite um número de 0 a 9.\n");
+            limpaBuffer();
+        }
+    } while (i!=1 || codArea > 9 || codArea < 0);
+    
+    printf("Area escolhida: %s\n", areas[codArea].nome);
+
+    for(i=0;i<qtd;i++){
+        if (livros[i].area == codArea && livros[i].qtdEmprestada != 0){
+            printf("\nTitulo: %s\nISBN: %s\nQuantidade de Emprestimos: %d\n----------------\n", 
+                livros[i].titulo, livros[i].isbn, livros[i].qtdEmprestada);
+            total += livros[i].qtdEmprestada;
+        }
     }
-    char emprestimo[14];
-    int temp;
+     printf("Quantidade total de emprestimos nessa área: %d\n", total);
+    
 }

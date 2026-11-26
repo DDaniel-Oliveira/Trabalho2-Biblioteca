@@ -49,7 +49,7 @@ void cadastrar_livro(Tlivro livros[], int *totalLivros, Tarea Areas[], int total
     printf("Autor: ");
     scanf(" %49[^\n]", novo.autor);
 
-    if (!escolher_area(Areas, totalAreas, novo.area)) {
+    if (!escolher_area(Areas, totalAreas, &novo.area)) {
     printf("Cadastro cancelado: area nao selecionada.\n");
     return;
 }
@@ -140,7 +140,7 @@ int ler_isbn(char isbn[14]) {
 }
 
 /*Funcão para incluir o livro na area correta durante o cadastro(Chamada na funcao adastrar_livro())*/
-int escolher_area(Tarea Areas[], int totalAreas, char areaEscolhi[]){
+int escolher_area(Tarea Areas[], int totalAreas, int *areaEscolhida){
     int i; 
     int opcao;  
     printf("\n---- AREAS DISPONIVEIS ------\n");
@@ -161,6 +161,6 @@ int escolher_area(Tarea Areas[], int totalAreas, char areaEscolhi[]){
         return 0;
     }
 
-    strcpy(areaEscolhi, Areas[opcao - 1].nome);
+    *areaEscolhida = opcao-1;
     return 1;
 }

@@ -3,7 +3,7 @@ typedef struct Livro{
     char titulo[50];
     char editora[50];
     char autor[50];
-    char area[30];
+    int area;
     int ano;
     int qtdCopias;
     int qtdEmprestada;
@@ -21,11 +21,11 @@ void realizarDevolucao(Tlivro livros[], int totalLivros); //operacao 6
 
 //FUNÇÕES DO MARCOS
 int ler_isbn(char isbn[14]);
-int escolher_area(Tarea Areas[], int totalAreas, char areaEscolhida[]);
+int escolher_area(Tarea Areas[], int totalAreas, int *areaEscolhida);
 void cadastrar_livro(Tlivro livros[], int *totalLivros, Tarea Areas[], int totalAreas);  //operacao 2
 
 //FUNÇÕES DO JOSÉ
-void listarLivros(Tlivros livros[], int totalLivros); //operacao 3
+void listarLivros(Tlivro livros[], int totalLivros); //operacao 3
 void buscarLivrosPorPrefixo(Tlivro livros[], int totalLivros); //operacao 4
 
 //FUNÇÕES DO DANIEL
@@ -33,4 +33,4 @@ void end(void);
 void cadAreas(Tarea a[]);
 void limpaBuffer(void);
 void exibirAreas(Tarea a[]); //operacao 1
-void emprestimo(Tarea *a[], int *total);
+void livrosEmprestadosArea(Tlivro livros[], Tarea areas[], int qtd); //operacao 7
