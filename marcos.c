@@ -1,6 +1,6 @@
 //Daniel de Oliveira Silva
 //João Pedro Teixeira
-//José Victor Alpino Viado
+//José Victor Alpino 
 //Marcos Henrique Alves da Silva Sousa
 
 #include <stdio.h>
@@ -16,6 +16,7 @@
 void cadastrar_livro(Tlivro livros[], int *totalLivros, Tarea Areas[], int totalAreas){
     Tlivro novo;
     int i;
+    novo.qtdEmprestada = 0;
 
     printf("\n----------- CADASTRO DE LIVRO -----------\n");
 
@@ -54,9 +55,10 @@ void cadastrar_livro(Tlivro livros[], int *totalLivros, Tarea Areas[], int total
     return;
 }
     /* Coloca o ano atual numa variável ano_atual */
-time_t agora = time(NULL);
+/*time_t agora = time(NULL);
 struct tm *data_atual = localtime(&agora);
-int ano_atual = data_atual->tm_year + 1900;
+int ano_atual = data_atual->tm_year + 1900;*/
+int ano_atual = 2026;
 
 do {
     printf("Ano de publicacao: ");
@@ -163,4 +165,28 @@ int escolher_area(Tarea Areas[], int totalAreas, int *areaEscolhida){
 
     *areaEscolhida = opcao-1;
     return 1;
+}
+void livrosEmprestados(Tlivro livros[], int qtdLivros, Tarea areas[], int totalAreas){
+    int i, j /*identifica a area*/;
+    int subtotalArea, total = 0;
+    printf("\nLIVROS EMPRESTADOS:\n");
+    /*Logica para Listar as areas*/
+    for(j = 0; j < totalAreas; j++){
+        subtotalArea = 0; /*zera contagem dos livros*/
+        printf("\n\n(AREA %d: %s)\n", j, areas[j].nome);
+        /*Logica para listar dadso dos livros*/
+        for(i = 0; i< qtdLivros; i++){
+            if (livros[i].area == j && livros[i].qtdEmprestada != 0){
+                printf("Titulo: %s\nISBN: %s\nQuantidade de Emprestimos: %d\n------------------------------------\n", 
+                livros[i].titulo, livros[i].isbn, livros[i].qtdEmprestada);
+                subtotalArea += livros[i].qtdEmprestada;
+            }
+            
+        }
+        printf("\nTotal de emprestimos da area: %d\n", subtotalArea);
+        total += subtotalArea;
+        
+
+    }
+    printf("\nTotal de exemplares emprestados: %d\n", total);
 }

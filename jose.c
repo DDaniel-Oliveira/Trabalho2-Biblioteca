@@ -12,31 +12,21 @@
 void listarLivros(Tlivro livros[], int totalLivros) {
 	int i;
 	
-	printf("\n========== RELAÇÃO DE LIVROS ==========\n");
+	printf("========== RELAÇÃO DE LIVROS ==========\n");
 	
 	if (totalLivros == 0){
 	    printf("Nenhum livro cadastrado.\n");
 	} else {
         for (i = 0; i< totalLivros; i++){
-            
-            printf("\nIBSN: %s\n", livros[i].isbn);
-        
-            printf("\nTitulo: %s\n", livros[i].titulo);
-        
-            printf("\nÁrea: %d\n", livros[i].area);
-        
-            printf("\nQuantidade total de cópias: %d\n", livros[i].qtdCopias);
-            
-            printf("\nQuantidade total emprestada: %s\n", livros[i].qtdEmprestada);
-            
+            printf("Titulo: %s\n", livros[i].titulo);
+            printf("IBSN: %s\n", livros[i].isbn);
+            printf("Área: %d\n", livros[i].area);
+            printf("Quantidade total de cópias: %d\n", livros[i].qtdCopias);
+            printf("Quantidade total emprestada: %d\n", livros[i].qtdEmprestada);
+            printf("--------------------------------------\n");
         }
     }
-	
 }
-
-
-
-
 
 /* operação 4*/
 

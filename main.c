@@ -74,10 +74,15 @@ int main(){
                 livrosEmprestadosArea(livros, Areas, totalLivros);
                 end();
                 break;
+            case 8:
+                limpaBuffer();
+                livrosEmprestados(livros, totalLivros, Areas, 10);
+                end();
+                break;
             case 0:
                 break;
             default:
-                printf("Não implementado.\n");
+                printf("Escolha Inválida.\n");
                 end();
         }
         

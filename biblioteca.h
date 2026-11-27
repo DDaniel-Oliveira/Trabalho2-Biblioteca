@@ -23,6 +23,7 @@ void realizarDevolucao(Tlivro livros[], int totalLivros); //operacao 6
 int ler_isbn(char isbn[14]);
 int escolher_area(Tarea Areas[], int totalAreas, int *areaEscolhida);
 void cadastrar_livro(Tlivro livros[], int *totalLivros, Tarea Areas[], int totalAreas);  //operacao 2
+void livrosEmprestados(Tlivro livros[], int qtdLivros, Tarea areas[], int totalAreas); //operacao 8
 
 //FUNÇÕES DO JOSÉ
 void listarLivros(Tlivro livros[], int totalLivros); //operacao 3
