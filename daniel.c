@@ -27,12 +27,10 @@ void cadAreas(Tarea a[]){
 void exibirAreas(Tarea a[]){
     int i;
     int tamanho = 0;
-
     for (i=0;i<10;i++){
-        tamanho = strlen(a[i].nome) - 30;
-
+        tamanho = strlen(a[i].nome) - 30;           //tamanho, "" serve para o %*s//
         printf("Área: %s%*s| Código: %d\n", a[i].nome, tamanho, "", a[i].codigo);
-    }
+    } //%*s serve pra immprimir um texto uma certa quantidade de vezes, nesse caso, é usado pra imprimir o tamanho da string da área - 30, pra ficar organizado.
 }
 
 void livrosEmprestadosArea(Tlivro livros[], Tarea areas[], int qtd){
