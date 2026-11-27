@@ -13,11 +13,12 @@ void listarLivros(Tlivro livros[], int totalLivros) {
 	int i;
 	
 	printf("========== RELAÇÃO DE LIVROS ==========\n");
-	
+	//verifica se há algum livro cadastrado
 	if (totalLivros == 0){
 	    printf("Nenhum livro cadastrado.\n");
 	} else {
-        for (i = 0; i< totalLivros; i++){
+        //percorre o vetor e exibe os dados de cada livro
+		for (i = 0; i< totalLivros; i++){
             printf("Titulo: %s\n", livros[i].titulo);
             printf("IBSN: %s\n", livros[i].isbn);
             printf("Área: %d\n", livros[i].area);
@@ -35,29 +36,29 @@ void buscarLivrosPorPrefixo(Tlivro livros[], int totalLivros) {
     char titulo[50];
     int i, j;
     int encontrado = 0;
-
+    //vai solicitar ao usuário o prefixo do livro
     printf("\n========== BUSCAR LIVROS ==========\n");
     printf("Digite o prefixo do titulo: ");
     scanf(" %49[^\n]", prefixo);
-    
+    //converte o prefixo em letras minúscula
     for (i = 0; prefixo[i] != '\0'; i++) {
         if (prefixo[i] >= 'A' && prefixo[i] <= 'Z') {
             prefixo[i] = prefixo[i] + 32;
         }
     }
-
+    //percorre os livros cadastrados
     for (i = 0; i < totalLivros; i++) {
 
         for (j = 0; livros[i].titulo[j] != '\0'; j++) {
             titulo[j] = livros[i].titulo[j];
-
+            //copia o título e converte para letras minúsculas
             if (titulo[j] >= 'A' && titulo[j] <= 'Z') {
                 titulo[j] = titulo[j] + 32;
             }
         }
-
+        
         titulo[j] = '\0';
-
+        //compara o início do título com o prefixo informado
         if (strncmp(titulo, prefixo, strlen(prefixo)) == 0) {
             encontrado = 1;
 
