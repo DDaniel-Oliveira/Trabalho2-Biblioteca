@@ -148,9 +148,9 @@ int escolher_area(Tarea Areas[], int totalAreas, int *areaEscolhida){
     printf("\n---- AREAS DISPONIVEIS ------\n");
 
     for(i = 0; i < totalAreas;  i++ ){
-        printf("%d - %s\n", i+1, Areas[i].nome);
+        printf("%d - %s\n", i, Areas[i].nome);
     }
-    printf("Escolha o numero da area: ");
+    printf("Escolha o numero da area(0 - 9): ");
     /*verifica se a opcao e valida*/
     if(scanf("%d", &opcao) != 1){
         printf("Opção Invalia");
@@ -163,7 +163,7 @@ int escolher_area(Tarea Areas[], int totalAreas, int *areaEscolhida){
         return 0;
     }
 
-    *areaEscolhida = opcao-1;
+    *areaEscolhida = opcao;
     return 1;
 }
 void livrosEmprestados(Tlivro livros[], int qtdLivros, Tarea areas[], int totalAreas){

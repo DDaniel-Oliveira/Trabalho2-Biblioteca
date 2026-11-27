@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <string>
 #include "biblioteca.h"
 
 void end(void){
@@ -26,8 +26,12 @@ void cadAreas(Tarea a[]){
 
 void exibirAreas(Tarea a[]){
     int i;
+    int tamanho = 0;
+
     for (i=0;i<10;i++){
-        printf("Área: %s\t| Código: %d\n", a[i].nome, a[i].codigo);
+        tamanho = strlen(a[i].nome) - 30;
+
+        printf("Área: %s%*s| Código: %d\n", a[i].nome, tamanho, "", a[i].codigo);
     }
 }
 
