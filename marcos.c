@@ -157,7 +157,7 @@ int escolher_area(Tarea Areas[], int totalAreas, int *areaEscolhida){
         limpaBuffer();
         return 0;
     }
-    if(opcao < 1 || opcao > totalAreas){
+    if(opcao < 0 || opcao > totalAreas){
         printf("Opção Invalia");
         limpaBuffer();
         return 0;

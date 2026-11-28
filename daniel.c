@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include <string>
+#include <string.h>
+#include <stdlib.h>
 #include "biblioteca.h"
 
 void end(void){
